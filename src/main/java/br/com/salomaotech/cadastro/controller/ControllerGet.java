@@ -101,8 +101,21 @@ public class ControllerGet {
         /* paginador */
         Paginador paginador;
 
+        /* informa se irá usar a pesquisa */
+        boolean isPesquisa = false;
+
+        /* excessão */
+        try {
+
+            /* se o parametro for diferente de vazio e nulo então está pesquisando */
+            isPesquisa = !request.getParameter("query").isEmpty() & !isNull(request.getParameter("query"));
+
+        } catch (java.lang.NullPointerException ex) {
+
+        }
+
         /* valida parametro */
-        if (isNull(request.getParameter("query"))) {
+        if (!isPesquisa) {
 
             /* não usa filtro de pesquisa */
             paginador = new Paginador(50, request.getParameter("pagina"), this.cadastroRepository.count());

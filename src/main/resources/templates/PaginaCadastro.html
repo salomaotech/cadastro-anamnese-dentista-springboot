@@ -50,151 +50,157 @@
             <!-- Formulário -->
             <form th:action="@{/adicionar/{id}(id=${id})}" th:object="${cadastro}" method="post">
 
-                <div class="form-row pl-4 mb-2">
+                <div class="card mb-4">
+                    <div class="card-header font-weight-bold mb-3">Anamnese</div>
 
-                    <div class="form-group col-md-3">                   
+                    <div class="pl-3 pr-3">
 
-                        <div class="form-row mb-2">
-                            <input type="checkbox" class="form-check-input" th:checked="*{resposta1}" id="resposta1" name="resposta1">
-                            <label for="resposta1" class="form-check-label">Está em tratamento médico</label>
+                        <div class="form-row pl-4 mb-2">
+
+                            <div class="form-group col-md-3">                   
+
+                                <div class="form-row mb-2">
+                                    <input type="checkbox" class="form-check-input" th:checked="*{resposta1}" id="resposta1" name="resposta1">
+                                    <label for="resposta1" class="form-check-label">Está em tratamento médico</label>
+                                </div>
+
+                                <div class="form-row mb-2">
+                                    <input type="checkbox" class="form-check-input" th:checked="*{resposta2}" id="resposta2" name="resposta2">
+                                    <label for="resposta2" class="form-check-label">Está grávida</label>
+                                </div>
+
+                                <div class="form-row mb-2">
+                                    <input type="checkbox" class="form-check-input" th:checked="*{resposta3}" id="resposta3" name="resposta3">
+                                    <label for="resposta3" class="form-check-label">Está fazendo algum regime</label>
+                                </div>
+
+                                <div class="form-row mb-2">
+                                    <input type="checkbox" class="form-check-input" th:checked="*{resposta4}" id="resposta4" name="resposta4">
+                                    <label for="resposta4" class="form-check-label">Possui diabétes</label>
+                                </div>
+
+                                <div class="form-row mb-2">
+                                    <input type="checkbox" class="form-check-input" th:checked="*{resposta5}" id="resposta5" name="resposta5">
+                                    <label for="resposta5" class="form-check-label">Tem alergias</label>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group col-md-3">                   
+
+                                <div class="form-row mb-2">
+                                    <input type="checkbox" class="form-check-input" th:checked="*{resposta6}" id="resposta6" name="resposta6">
+                                    <label for="resposta6" class="form-check-label">Febre reumática</label>
+                                </div>
+
+                                <div class="form-row mb-2">
+                                    <input type="checkbox" class="form-check-input" th:checked="*{resposta7}" id="resposta7" name="resposta7">
+                                    <label for="resposta7" class="form-check-label">Problemas de coagulação</label>
+                                </div>
+
+                                <div class="form-row mb-2">
+                                    <input type="checkbox" class="form-check-input" th:checked="*{resposta8}" id="resposta8" name="resposta8">
+                                    <label for="resposta8" class="form-check-label">Problemas hemorrágicos</label>
+                                </div>
+
+                                <div class="form-row mb-2">
+                                    <input type="checkbox" class="form-check-input" th:checked="*{resposta9}" id="resposta9" name="resposta9">
+                                    <label for="resposta9" class="form-check-label">Problemas com anestesía</label>
+                                </div>
+
+                                <div class="form-row mb-2">
+                                    <input type="checkbox" class="form-check-input" th:checked="*{resposta10}" id="resposta10" name="resposta10">
+                                    <label for="resposta10" class="form-check-label">Alergia a medicamento</label>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group col-md-3">                   
+
+                                <div class="form-row mb-2">
+                                    <input type="checkbox" class="form-check-input" th:checked="*{resposta11}" id="resposta11" name="resposta11">
+                                    <label for="resposta11" class="form-check-label">Tem hepatite</label>
+                                </div>
+
+                                <div class="form-row mb-2">
+                                    <input type="checkbox" class="form-check-input" th:checked="*{resposta12}" id="resposta12" name="resposta12">
+                                    <label for="resposta12" class="form-check-label">É portador do vírus HIV</label>
+                                </div>
+
+                                <div class="form-row mb-2">
+                                    <input type="checkbox" class="form-check-input" th:checked="*{resposta13}" id="resposta13" name="resposta13">
+                                    <label for="resposta13" class="form-check-label">Usa ou já usou drogas</label>
+                                </div>
+
+                                <div class="form-row mb-2">
+                                    <input type="checkbox" class="form-check-input" th:checked="*{resposta14}" id="resposta14" name="resposta14">
+                                    <label for="resposta14" class="form-check-label">Fumante</label>
+                                </div>
+
+                                <div class="form-row mb-2">
+                                    <input type="checkbox" class="form-check-input" th:checked="*{resposta15}" id="resposta15" name="resposta15">
+                                    <label for="resposta15" class="form-check-label">Doença cardiovascular</label>
+                                </div>
+
+                            </div>
+
                         </div>
 
-                        <div class="form-row mb-2">
-                            <input type="checkbox" class="form-check-input" th:checked="*{resposta2}" id="resposta2" name="resposta2">
-                            <label for="resposta2" class="form-check-label">Está grávida</label>
+                        <div class="form-row mb-3">
+
+                            <div class="form-group col-md-3">            
+
+                                <label class="form-check-label" for="resposta16">Pressão arterial</label>
+                                <select class="form-control" id="resposta16" name="resposta16">
+
+                                    <optgroup label="Selecionado">
+
+                                        <option th:if="*{resposta16 == 'normal'}" th:text="Normal" selected></option>
+                                        <option th:if="*{resposta16 == 'alta'}" th:text="Alta" selected></option>
+                                        <option th:if="*{resposta16 == 'baixa'}" th:text="Baixa" selected></option>
+
+                                    </optgroup>
+
+                                    <optgroup label="Opções">
+                                        <option value="normal">Normal</option>
+                                        <option value="alta">Alta</option>
+                                        <option value="baixa">Baixa</option>
+                                    </optgroup>
+
+                                </select>
+
+                            </div>
+
                         </div>
 
-                        <div class="form-row mb-2">
-                            <input type="checkbox" class="form-check-input" th:checked="*{resposta3}" id="resposta3" name="resposta3">
-                            <label for="resposta3" class="form-check-label">Está fazendo algum regime</label>
-                        </div>
+                        <div class="form-row mb-3">
 
-                        <div class="form-row mb-2">
-                            <input type="checkbox" class="form-check-input" th:checked="*{resposta4}" id="resposta4" name="resposta4">
-                            <label for="resposta4" class="form-check-label">Possui diabétes</label>
-                        </div>
+                            <div class="form-group col-md-3">   
 
-                        <div class="form-row mb-2">
-                            <input type="checkbox" class="form-check-input" th:checked="*{resposta5}" id="resposta5" name="resposta5">
-                            <label for="resposta5" class="form-check-label">Tem alergias</label>
-                        </div>
+                                <label class="form-check-label" for="resposta17">Doenças respiratórias</label>
+                                <textarea cols="5" rows="3" class="form-control" id="resposta17" th:field="*{resposta17}"></textarea>
 
-                    </div>
+                            </div>
 
-                    <div class="form-group col-md-3">                   
+                            <div class="form-group col-md-3">   
 
-                        <div class="form-row mb-2">
-                            <input type="checkbox" class="form-check-input" th:checked="*{resposta6}" id="resposta6" name="resposta6">
-                            <label for="resposta6" class="form-check-label">Febre reumática</label>
-                        </div>
+                                <label class="form-check-label" for="resposta18">Doenças na família</label>
+                                <textarea cols="5" rows="3" class="form-control" id="resposta18" th:field="*{resposta18}"></textarea>
 
-                        <div class="form-row mb-2">
-                            <input type="checkbox" class="form-check-input" th:checked="*{resposta7}" id="resposta7" name="resposta7">
-                            <label for="resposta7" class="form-check-label">Problemas de coagulação</label>
-                        </div>
+                            </div>
 
-                        <div class="form-row mb-2">
-                            <input type="checkbox" class="form-check-input" th:checked="*{resposta8}" id="resposta8" name="resposta8">
-                            <label for="resposta8" class="form-check-label">Problemas hemorrágicos</label>
-                        </div>
+                            <div class="form-group col-md-6">   
 
-                        <div class="form-row mb-2">
-                            <input type="checkbox" class="form-check-input" th:checked="*{resposta9}" id="resposta9" name="resposta9">
-                            <label for="resposta9" class="form-check-label">Problemas com anestesía</label>
-                        </div>
+                                <label class="form-check-label" for="resposta19">Informações adicionais</label>
+                                <textarea cols="5" rows="3" class="form-control" id="resposta19" th:field="*{resposta19}"></textarea>
 
-                        <div class="form-row mb-2">
-                            <input type="checkbox" class="form-check-input" th:checked="*{resposta10}" id="resposta10" name="resposta10">
-                            <label for="resposta10" class="form-check-label">Alergia a medicamento</label>
-                        </div>
+                            </div>
 
-                    </div>
-
-                    <div class="form-group col-md-3">                   
-
-                        <div class="form-row mb-2">
-                            <input type="checkbox" class="form-check-input" th:checked="*{resposta11}" id="resposta11" name="resposta11">
-                            <label for="resposta11" class="form-check-label">Tem hepatite</label>
-                        </div>
-
-                        <div class="form-row mb-2">
-                            <input type="checkbox" class="form-check-input" th:checked="*{resposta12}" id="resposta12" name="resposta12">
-                            <label for="resposta12" class="form-check-label">É portador do vírus HIV</label>
-                        </div>
-
-                        <div class="form-row mb-2">
-                            <input type="checkbox" class="form-check-input" th:checked="*{resposta13}" id="resposta13" name="resposta13">
-                            <label for="resposta13" class="form-check-label">Usa ou já usou drogas</label>
-                        </div>
-
-                        <div class="form-row mb-2">
-                            <input type="checkbox" class="form-check-input" th:checked="*{resposta14}" id="resposta14" name="resposta14">
-                            <label for="resposta14" class="form-check-label">Fumante</label>
-                        </div>
-
-                        <div class="form-row mb-2">
-                            <input type="checkbox" class="form-check-input" th:checked="*{resposta15}" id="resposta15" name="resposta15">
-                            <label for="resposta15" class="form-check-label">Doença cardiovascular</label>
                         </div>
 
                     </div>
 
                 </div>
-
-
-                <div class="form-row mb-3">
-
-                    <div class="form-group col-md-3">            
-
-                        <label class="form-check-label" for="resposta16">Pressão arterial</label>
-                        <select class="form-control" id="resposta16" name="resposta16">
-
-                            <optgroup label="Selecionado">
-
-                                <option th:if="*{resposta16 == 'normal'}" th:text="Normal" selected></option>
-                                <option th:if="*{resposta16 == 'alta'}" th:text="Alta" selected></option>
-                                <option th:if="*{resposta16 == 'baixa'}" th:text="Baixa" selected></option>
-
-                            </optgroup>
-
-                            <optgroup label="Opções">
-                                <option value="normal">Normal</option>
-                                <option value="alta">Alta</option>
-                                <option value="baixa">Baixa</option>
-                            </optgroup>
-
-                        </select>
-
-                    </div>
-
-                </div>
-
-
-                <div class="form-row mb-3">
-
-                    <div class="form-group col-md-3">   
-
-                        <label class="form-check-label" for="resposta17">Doenças respiratórias</label>
-                        <textarea cols="5" rows="3" class="form-control" id="resposta17" th:field="*{resposta17}"></textarea>
-
-                    </div>
-
-                    <div class="form-group col-md-3">   
-
-                        <label class="form-check-label" for="resposta18">Doenças na família</label>
-                        <textarea cols="5" rows="3" class="form-control" id="resposta18" th:field="*{resposta18}"></textarea>
-
-                    </div>
-
-                    <div class="form-group col-md-6">   
-
-                        <label class="form-check-label" for="resposta19">Informações adicionais</label>
-                        <textarea cols="5" rows="3" class="form-control" id="resposta19" th:field="*{resposta19}"></textarea>
-
-                    </div>
-
-                </div>
-
 
                 <!-- Salvar -->
                 <div class="form-row">
