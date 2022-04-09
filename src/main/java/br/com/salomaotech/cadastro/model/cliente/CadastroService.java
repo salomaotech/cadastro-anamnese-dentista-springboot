@@ -1,4 +1,4 @@
-package br.com.salomaotech.cadastro.model;
+package br.com.salomaotech.cadastro.model.cliente;
 
 import org.springframework.stereotype.Service;
 

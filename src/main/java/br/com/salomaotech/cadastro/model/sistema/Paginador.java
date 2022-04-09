@@ -1,4 +1,4 @@
-package br.com.salomaotech.cadastro.model;
+package br.com.salomaotech.cadastro.model.sistema;
 
 import java.util.ArrayList;
 import org.springframework.data.domain.PageRequest;
@@ -6,6 +6,11 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 
+/**
+ * Constroe um paginador para o Repository
+ *
+ * @author @salomaotech
+ */
 public class Paginador {
 
     private final int numeroItensPorPagina;
@@ -21,23 +26,24 @@ public class Paginador {
      */
     public Paginador(int numeroItensPorPagina, String numeroPaginaAtual, long numeroRegistrosTabela) {
 
-        int pgAtual;
+        /* página atual */
+        int paginaAtual;
 
         /* excessão */
         try {
 
-            pgAtual = Integer.parseInt(numeroPaginaAtual);
+            paginaAtual = Integer.parseInt(numeroPaginaAtual);
 
         } catch (java.lang.NumberFormatException ex) {
 
-            pgAtual = 0;
+            paginaAtual = 0;
 
         }
 
         /* popula */
         this.numeroItensPorPagina = numeroItensPorPagina;
         this.numeroRegistrosTabela = numeroRegistrosTabela;
-        this.numeroPaginaAtual = pgAtual;
+        this.numeroPaginaAtual = paginaAtual;
 
     }
 
@@ -55,7 +61,7 @@ public class Paginador {
     /**
      * Retorna o paginador ordenado por Direction.ASC
      *
-     * @param nomeColuna NOome da coluna
+     * @param nomeColuna Nome da coluna
      * @return Página atual
      */
     public Pageable getPaginadorOrdenadoAsc(String nomeColuna) {
@@ -67,7 +73,7 @@ public class Paginador {
     /**
      * Retorna o paginador ordenado por Direction.DESC
      *
-     * @param nomeColuna NOome da coluna
+     * @param nomeColuna Nome da coluna
      * @return Página atual
      */
     public Pageable getPaginadorOrdenadoDesc(String nomeColuna) {

@@ -1,14 +1,13 @@
 package br.com.salomaotech.cadastro.controller;
 
-import br.com.salomaotech.cadastro.model.CadastroModel;
+import br.com.salomaotech.cadastro.model.cliente.CadastroModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
-import br.com.salomaotech.cadastro.model.CadastroRepository;
-import br.com.salomaotech.cadastro.model.Paginador;
-import static java.util.Objects.isNull;
+import br.com.salomaotech.cadastro.model.cliente.CadastroRepository;
+import br.com.salomaotech.cadastro.model.sistema.Paginador;
 import org.springframework.web.context.request.WebRequest;
 
 @Controller
@@ -101,21 +100,8 @@ public class ControllerGet {
         /* paginador */
         Paginador paginador;
 
-        /* informa se irá usar a pesquisa */
-        boolean isPesquisa = false;
-
-        /* excessão */
-        try {
-
-            /* se o parametro for diferente de vazio e nulo então está pesquisando */
-            isPesquisa = !request.getParameter("query").isEmpty() & !isNull(request.getParameter("query"));
-
-        } catch (java.lang.NullPointerException ex) {
-
-        }
-
         /* valida parametro */
-        if (!isPesquisa) {
+        if (request.getParameterMap().isEmpty()) {
 
             /* não usa filtro de pesquisa */
             paginador = new Paginador(50, request.getParameter("pagina"), this.cadastroRepository.count());

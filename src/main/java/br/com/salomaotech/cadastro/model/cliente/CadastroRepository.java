@@ -1,4 +1,4 @@
-package br.com.salomaotech.cadastro.model;
+package br.com.salomaotech.cadastro.model.cliente;
 
 import java.util.List;
 import org.springframework.data.domain.Pageable;

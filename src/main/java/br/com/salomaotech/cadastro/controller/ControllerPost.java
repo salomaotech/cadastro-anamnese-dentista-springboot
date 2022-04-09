@@ -1,14 +1,14 @@
 package br.com.salomaotech.cadastro.controller;
 
-import br.com.salomaotech.cadastro.model.CadastroModel;
+import br.com.salomaotech.cadastro.model.cliente.CadastroModel;
 import static java.util.Objects.isNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.context.request.WebRequest;
-import br.com.salomaotech.cadastro.model.CadastroRepository;
-import br.com.salomaotech.cadastro.model.CadastroService;
+import br.com.salomaotech.cadastro.model.cliente.CadastroRepository;
+import br.com.salomaotech.cadastro.model.cliente.CadastroService;
 
 @Controller
 public class ControllerPost {

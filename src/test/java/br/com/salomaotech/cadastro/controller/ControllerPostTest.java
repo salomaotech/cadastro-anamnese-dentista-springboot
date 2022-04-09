@@ -6,7 +6,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
@@ -20,7 +19,7 @@ public class ControllerPostTest {
     public void testPostAdiciona() throws Exception {
 
         /* testa o redirecionamento */
-        this.mockMvc.perform(post("/adicionar").param("nome", "Teste Nome").param("cpf", "000.000.000-00")).andDo(print()).andExpect(status().is(302));
+        this.mockMvc.perform(post("/adicionar")).andExpect(status().is(302));
 
     }
 
@@ -28,7 +27,7 @@ public class ControllerPostTest {
     public void testPostAtualiza() throws Exception {
 
         /* testa o redirecionamento */
-        this.mockMvc.perform(post("/adicionar/1").param("nome", "Teste Nome").param("cpf", "000.000.000-00")).andDo(print()).andExpect(status().is(302));
+        this.mockMvc.perform(post("/adicionar/1")).andExpect(status().is(302));
 
     }
 
@@ -36,7 +35,7 @@ public class ControllerPostTest {
     public void testPostDeleta() throws Exception {
 
         /* testa o redirecionamento */
-        this.mockMvc.perform(post("/deletar/1")).andDo(print()).andExpect(status().is(302));
+        this.mockMvc.perform(post("/deletar/1")).andExpect(status().is(302));
 
     }
 
